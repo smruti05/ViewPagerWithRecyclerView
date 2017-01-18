@@ -17,7 +17,7 @@ public class SamplePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return new SampleFragment(list, position);
+        return new SampleFragment(list.get(position).getPaymentList());
     }
 
     @Override

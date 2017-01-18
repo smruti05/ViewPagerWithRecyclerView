@@ -10,7 +10,11 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int [] imageIds = {R.drawable.selected_dot, R.drawable.deselected_dot, R.drawable.selected_dot, R.drawable.deselected_dot, R.drawable.selected_dot};
+    /*private int[] imageIds = {R.drawable.faasos, R.drawable.zomato,
+            R.drawable.foodpanda, R.drawable.my_website,
+            R.drawable.phone_call, R.drawable.swiggy,
+            R.drawable.thefork, R.drawable.travel_khana};*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private ArrayList<SampleModel> getDummyData() {
-        ArrayList<SampleModel> list = new ArrayList<SampleModel>();
+        ArrayList<SampleModel> arrayList = new ArrayList<SampleModel>();
         for (int i = 0; i < 3; i++) {
             SampleModel sampleModel = new SampleModel();
             ArrayList<String> strList = new ArrayList<>();
@@ -33,9 +37,21 @@ public class MainActivity extends AppCompatActivity {
                 strList.add(String.valueOf(j));
             }
             sampleModel.setPaymentList(strList);
-            list.add(sampleModel);
+            arrayList.add(sampleModel);
         }
-        return list;
+       /* ArrayList<SampleModel> arrayList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            SampleModel model = new SampleModel();
+            ArrayList<String> list = new ArrayList<>();
+            list.add(String.valueOf(i));
+            model.setPaymentList(list);
+        }
+        for (int start = 0; start < arrayList.size(); start += 3) {
+            int end = Math.min(start + 3, arrayList.size());
+            List<String> sublist = arrayList.get(start).getPaymentList().subList(start, end);
+            System.out.println(sublist);
+        }*/
+        return arrayList;
     }
 
     private void setCircularPageIndicator(ViewPager mViewPager) {

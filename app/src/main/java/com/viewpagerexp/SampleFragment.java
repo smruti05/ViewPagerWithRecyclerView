@@ -10,20 +10,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @SuppressLint("ValidFragment")
 public class SampleFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private ArrayList<SampleModel> list;
-    private int position;
+    private List<String> list;
     private RecyclerViewAdapter recyclerViewAdapter;
 
     @SuppressLint("ValidFragment")
-    public SampleFragment(ArrayList<SampleModel> list, int position) {
+    public SampleFragment(List<String> list) {
         this.list = list;
-        this.position = position;
     }
 
     @Override
@@ -35,7 +33,7 @@ public class SampleFragment extends Fragment {
 
     private void initViews(View rootView) {
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerView);
-        recyclerViewAdapter = new RecyclerViewAdapter(list.get(position).getPaymentList());
+        recyclerViewAdapter = new RecyclerViewAdapter(list);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
